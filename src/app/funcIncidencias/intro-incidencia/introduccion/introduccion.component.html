@@ -1,0 +1,18 @@
+<form [formGroup]="formNewIncidencia" (ngSubmit)="onSubmit()">
+    <h1>Añadir incidencia</h1>
+    <div>        
+        <label for="lugarIncidencia">Lugar de la incidencia</label>
+        <input type="text" formControlName="lugarIncidencia" id="lugarIncidencia" class="formControl">
+    </div>
+    <div>
+        <label for="descIncidencia">Descripción de la incidencia</label>
+        <textarea formControlName="descIncidencia" id="descIncidencia" class="formControl" rows="5" cols="30" style="resize: none;"></textarea>
+    </div>
+    <div>
+        <label for="arregloIncidencia">Posible arreglo de la incidencia</label>
+        <textarea formControlName="arregloIncidencia" id="arregloIncidencia" class="formControl" rows="5" cols="30" style="resize: none;"></textarea>
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-info" [disabled]="!formNewIncidencia.valid">
+</form>
+<button routerLink="/menu">Ir al menu</button>
+

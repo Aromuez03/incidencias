@@ -1,0 +1,9 @@
+<h2>Listado de incidencias</h2>
+
+<ul *ngIf="incidencias">
+    <li *ngFor="let incidencia of incidencias" routerLink="/gesInc/edit/{{ incidencia.documentId }}">
+        {{incidencia.data.lugarIncidencia}} - {{incidencia.data.estadoIncidencia}}
+    </li>
+</ul>
+<br>
+<pre><button routerLink="/">Añadir</button> - <button routerLink="/menu">Volver al menu</button></pre>

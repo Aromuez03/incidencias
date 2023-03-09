@@ -1,0 +1,35 @@
+<div class="w-50 mx-auto card my-3 shadow rounded rounded">
+    <div class="col-lg-4 d-none d-lg-flex bg-success m-0 rounded-end">
+        <h1 class="align-self-lg-center p-5 text-white">Registro</h1>
+      </div>
+    <div class="row g-0 d-flex">
+      <div class="col-lg-8">
+        <div class="card-body py-5 px-md-5">
+          <div [formGroup]="authForm">
+            <input type="text"
+                   class="form-control m-2"
+                   formControlName="userName"
+                   placeholder="Jordi"> <br>   
+            <input type="email"
+                   class="form-control m-2"
+                   formControlName="email"
+                   placeholder="Email Address"> <br> 
+            <input type="password"
+                   class="form-control m-2"
+                   formControlName="password"
+                   placeholder="password"> <br>
+            <input type="button"
+                   class="btn btn-success m-2 "
+                   value="Registrar"
+                   (click)="registro()"
+                   [disabled]="!authForm.valid">
+          </div>
+          <div class="link-info pt-4">
+            <span role="button" class="btn-link" routerLink="/login"><span>¿Tiene una cuenta?</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

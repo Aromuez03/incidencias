@@ -10,6 +10,11 @@ export class FirestoreService {
     private afb: AngularFirestore
   ) { }
 
+  queryIncidencia(param: string, value: string) {
+    return this.afb.collection('incidencias', ref => ref.where(param, '==', value)).valueChanges();
+  }
+  
+
   getAll(coleccion: string)
   {
     return this.afb.collection(coleccion).snapshotChanges();

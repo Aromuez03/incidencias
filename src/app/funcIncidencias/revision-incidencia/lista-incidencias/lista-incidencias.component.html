@@ -1,0 +1,20 @@
+<h2>Revisiones</h2>
+<select [(ngModel)]="selectedValue" (change)="filtrarIncidencias()">
+  <option value="Todos">Todos</option>
+  <option value="No Revisado">No Revisado</option>
+  <option value="Revisado">Revisado</option>
+</select>
+
+<ul *ngIf="incidencias.length">
+  <li *ngFor="let incidencia of incidencias; let i = index">
+    <span style="font-size: 20px;">{{incidencia.data.lugarIncidencia}} - {{incidencia.data.estadoIncidencia}}</span>
+    <form [formGroup]="revisionForms[i]" (ngSubmit)="onSubmit(i)" style="display: inline-block;">
+      <select formControlName="revision" id="revision" style="font-size: 12px;">
+        <option value="No Revisado">No Revisado</option>
+        <option value="Revisado">Revisado</option>
+      </select>
+      <button type="submit" style="font-size: 12px;">Guardar Cambios</button>
+    </form>
+  </li>
+</ul>
+<button routerLink="/menu">Volver al menu</button>

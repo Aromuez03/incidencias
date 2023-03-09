@@ -1,0 +1,18 @@
+<form [formGroup]="formEditIncidencia" (ngSubmit)="onSubmit()">
+    <h1>Editar incidencia</h1>
+    <div>
+        <select formControlName="estadoIncidencia" id="estadoIncidencia">
+            <option value="Leida">Leida</option>
+            <option value="Asignada">Asignada</option>
+            <option value="Comenzada">Comenzada</option>
+            <option value="Terminada">Terminada</option>
+        </select>
+        <label for="estadoIncidencia">Estado de la incidencia</label>
+    </div>
+    <div>        
+        <label for="asignaIncidencia">Asignada a:</label>
+        <input type="text" formControlName="asignaIncidencia" id="asignaIncidencia" class="formControl">
+    </div>
+    <input type="submit" value="Guardar" class="btn btn-info" [disabled]="!formEditIncidencia.valid">
+</form>
+<button routerLink="/menu">Volver al menu</button>

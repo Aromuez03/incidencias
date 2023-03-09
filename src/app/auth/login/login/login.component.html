@@ -1,0 +1,24 @@
+<div class="w-50  mx-auto card my-3 shadow rounded rounded-3">
+    <div class="row g-0 d-flex">
+      <div class="col-lg-5 d-none d-lg-flex bg-primary m-0 rounded-start">
+        <h1 class="align-self-lg-center px-4 text-white">Inicio de sesion</h1>
+      </div>
+      <div class="col-lg-7">
+        <div class="card-body py-5 px-md-5">
+          <form [formGroup]="formLogin">
+            <label>Email</label>
+            <input type="email" formControlName="email"  placeholder="example@example.com" class="form-control">
+            <br/>
+            <label>Contraseña</label>
+            <input type="password" formControlName="contrasena"  placeholder="AlfonsoR26V" class="form-control" minlength="6" maxlength="20" pattern="[A-Za-z0-9]{6,20}">
+            <br/>
+            <button class="btn btn-success" (click)="login()" [disabled]="!formLogin.valid">
+              Iniciar sesion
+            </button>
+            &nbsp;<button class="btn btn-primary" (click)="irARegistro()">Registro</button>
+            <a class="nav-link active" aria-current="page" routerLink="/menu">Menu</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

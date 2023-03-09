@@ -1,0 +1,13 @@
+<form [formGroup]="formUsu">
+    <div>
+      <input type="text" formControlName="nombre" id="nombre" class="formControl">
+      <label for="nombre">Nombre</label>
+    </div>
+    <div>
+      <input type="text" formControlName="email" id="email" class="formControl">
+      <label for="email">Email</label>
+    </div>
+    <input type="submit" value="Guardar" class="btn btn-info" [disabled]="!formUsu.valid">
+  </form>
+  <button routerLink="/listUsu">Volver</button>
+  <button routerLink="/menu">Ir al menu</button>
